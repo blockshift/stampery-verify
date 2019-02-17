@@ -23,6 +23,7 @@ export class AppService {
         (res) => {
             return new Blob([res.blob()], { type: 'application/pdf' })
         })
+        .catch((error:any) => Observable.throw(error.json().error || 'Server error shit bang in'));  
 
 
 

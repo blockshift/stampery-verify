@@ -16,12 +16,20 @@ constructor(private exampleService: AppService){}
  // 	var saveAs:any ;
     console.log(value);
     this.exampleService.verifystamp(value.stamp).subscribe(
-        (res) => {      
+        (res) => {  
+
+           
             saveAs(res,'certificate.pdf')
+        
+ 
+        },
+
+        (err)=>{
+        	var servererror = "Server Error";
+        	console.log(servererror);
         }
+
     );
-
-
-
-  }
 }
+    }
+
