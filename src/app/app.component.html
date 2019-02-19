@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Search Stamp ID</h2>
 
-  <form #searchStamp="ngForm" (ngSubmit)="onSubmit(searchStamp.value)">
+  <form #searchStamp="ngForm" (ngSubmit)="onverify(searchStamp.value)">
     <div class="form-group">
       <label>Stamp ID</label>
       <input type="text" class="form-control" name="stamp" ngModel>
@@ -10,3 +10,84 @@
 <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
+
+<div class="row">
+    <div class="col-md-3">
+      
+
+<strong>Student Name</strong>
+
+    </div>
+    <div class="col-md-9">
+<div #dataContainer></div>
+</div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-3">
+      
+
+<strong>Father Name</strong>
+
+    </div>
+    <div class="col-md-9">
+<div #dataContainer2></div>
+</div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-3">
+      
+
+<strong>CGPA</strong>
+
+    </div>
+<div class="col-md-9">
+<div #dataContainer3></div>
+</div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-3">
+      
+
+<strong>Stampery ID</strong>
+
+    </div>
+  
+
+ 
+<div class="col-md-9">
+<div #dataContainer4></div>
+</div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-md-3">
+      
+
+<strong>Timestamp</strong>
+
+    </div>
+    <div class="col-md-9">
+<div #dataContainer5></div>
+</div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-3">
+      
+
+<strong>Stamp Validity</strong>
+
+    </div>
+    <div class="col-md-9">
+<div #dataContainer6></div>
+</div>
+  </div>
