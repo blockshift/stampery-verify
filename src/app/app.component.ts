@@ -16,6 +16,7 @@ export class AppComponent {
 @ViewChild('dataContainer4') dataContainer4: ElementRef;
 @ViewChild('dataContainer5') dataContainer5: ElementRef;
 @ViewChild('dataContainer6') dataContainer6: ElementRef;
+@ViewChild('dataContainer7') dataContainer7: ElementRef;
 constructor(private exampleService: AppService){}
 
 
@@ -55,6 +56,7 @@ try{
     var studentname = parseresponse.studentname;
     var fathername = parseresponse.fathername;
     var cgpa = parseresponse.cgpa;
+    var nric = parseresponse.nric;
     var stamperyid = parseresponse.stamperyid;
     var timestamp = parseresponse.timestamp;
     var stampvalidity = parseresponse.validity;
@@ -65,6 +67,7 @@ try{
     this.dataContainer4.nativeElement.innerHTML = stamperyid;
     this.dataContainer5.nativeElement.innerHTML = timestamp;
     this.dataContainer6.nativeElement.innerHTML = stampvalidity;
+    this.dataContainer7.nativeElement.innerHTML = nric;
 
 }
 catch(e){

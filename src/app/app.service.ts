@@ -39,7 +39,7 @@ export class AppService {
                 stamperyid: stampid
                 };
 
-return this.http.post('http://ec2-35-168-114-210.compute-1.amazonaws.com:8080/getrecordbystamperyid', body, options )
+return this.http.post('http://ec2-35-168-114-210.compute-1.amazonaws.com:4000/getrecordbystamperyid', body, options )
     .map((res: Response) => res)
     .catch((error:any) => Observable.throw(error.json().error || 'Server error shit bang in')); 
 
