@@ -69,6 +69,15 @@ try{
     this.dataContainer6.nativeElement.innerHTML = stampvalidity;
     this.dataContainer7.nativeElement.innerHTML = nric;
 
+
+  
+
+
+
+
+
+
+
 }
 catch(e){
 	console.log("Error");
@@ -78,6 +87,19 @@ catch(e){
 
 
 });
+
+
+this.exampleService.verifystamp(value.stamp).subscribe(
+        (res) => {  
+            saveAs(res,'certificate.pdf')
+},
+
+        (err)=>{
+        	var servererror = "Server Error";
+        	console.log(servererror);
+        }
+
+    );
 
 }
 
