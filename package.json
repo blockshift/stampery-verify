@@ -12,6 +12,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/material": "^5.0.2",
+    "@angular/cdk": "^5.0.2",
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",

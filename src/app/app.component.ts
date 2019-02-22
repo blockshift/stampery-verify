@@ -1,6 +1,7 @@
 import { Component,  Input , ViewChild,ElementRef} from '@angular/core';
 import { AppService } from './app.service';
-
+import {MatDialog,MatDialogConfig} from '@angular/material';
+import { ErrordialogComponent } from './errordialog/errordialog.component';
 import { saveAs } from 'file-saver';
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ export class AppComponent {
 @ViewChild('dataContainer7') dataContainer7: ElementRef;
 @ViewChild('dataContainer8') dataContainer8: ElementRef;
 
-constructor(private exampleService: AppService){}
+constructor(private exampleService: AppService,public dialog: MatDialog){}
 
 
 
@@ -54,6 +55,17 @@ try{
 
 	console.log("Data received",data);
     var response = data["_body"];
+   if (response == "false") {
+   	const dialogConfig = new MatDialogConfig();
+   	dialogConfig.position = {
+    'top': '50',
+    left: '100'
+};
+   	let dialogRef = this.dialog.open(ErrordialogComponent, {
+      height: '150px',
+      width: '500px'
+    });
+   }
     var parseresponse = JSON.parse(response);
     var studentname = parseresponse.studentname;
     var coursename = parseresponse.coursename;
@@ -83,7 +95,8 @@ try{
 
 }
 catch(e){
-	console.log("Error");
+	 
+	  
 }    
 
 
