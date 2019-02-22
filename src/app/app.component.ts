@@ -17,6 +17,8 @@ export class AppComponent {
 @ViewChild('dataContainer5') dataContainer5: ElementRef;
 @ViewChild('dataContainer6') dataContainer6: ElementRef;
 @ViewChild('dataContainer7') dataContainer7: ElementRef;
+@ViewChild('dataContainer8') dataContainer8: ElementRef;
+
 constructor(private exampleService: AppService){}
 
 
@@ -54,21 +56,22 @@ try{
     var response = data["_body"];
     var parseresponse = JSON.parse(response);
     var studentname = parseresponse.studentname;
-    var fathername = parseresponse.fathername;
-    var cgpa = parseresponse.cgpa;
+    var coursename = parseresponse.coursename;
+    var startdate = parseresponse.startdate;
+    var enddate = parseresponse.enddate;
     var nric = parseresponse.nric;
     var stamperyid = parseresponse.stamperyid;
     var timestamp = parseresponse.timestamp;
     var stampvalidity = parseresponse.validity;
     
     this.dataContainer.nativeElement.innerHTML = studentname;
-    this.dataContainer2.nativeElement.innerHTML = fathername;
-    this.dataContainer3.nativeElement.innerHTML = cgpa;
+    this.dataContainer2.nativeElement.innerHTML = coursename;
+    this.dataContainer3.nativeElement.innerHTML = nric;
     this.dataContainer4.nativeElement.innerHTML = stamperyid;
     this.dataContainer5.nativeElement.innerHTML = timestamp;
     this.dataContainer6.nativeElement.innerHTML = stampvalidity;
-    this.dataContainer7.nativeElement.innerHTML = nric;
-
+    this.dataContainer7.nativeElement.innerHTML = startdate;
+    this.dataContainer8.nativeElement.innerHTML = enddate;
 
   
 
