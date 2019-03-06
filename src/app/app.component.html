@@ -1,91 +1,95 @@
 <div class="container">
-  <h2>Search Stamp ID</h2>
+<img src="../assets/image/bca.png" alt="Logo" class="logo">
+  <h2>Certificate Verification</h2>
+<br>
+<h4>All certficates issued to students who have completed a course from Blockchain Academy Malaysia are recorded
+  onto the blockchain. To verify if a certificate is valid, simply insert the Hash ID and click Search.</h4> 
 
   <form #searchStamp="ngForm" (ngSubmit)="onverify(searchStamp.value)">
     <div class="form-group">
-      <label>Stamp ID</label>
-      <input type="text" class="form-control" name="stamp" ngModel>
+
+      <label>Enter Hash ID</label>
+      <input type="text" class="form-control" name="stamp" ngModel placeholder="Hash ID">
     </div>
 
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-primary">Search</button>
   </form>
 </div>
 
 <div class="row">
-    <div class="col-md-3">
-      
+    <div class="col">
 
-<strong>Student Name</strong>
+<strong>Full Name</strong>
 
     </div>
-    <div class="col-md-9">
+    <div class="col">
 <div #dataContainer></div>
 </div>
   </div>
 
 
   <div class="row">
-    <div class="col-md-3">
+<div class="col">
       
 
 <strong>Course Name</strong>
 
     </div>
-    <div class="col-md-9">
+    <div class="col">
 <div #dataContainer2></div>
 </div>
   </div>
 
 
   <div class="row">
-    <div class="col-md-3">
+<div class="col">
       
 
-<strong>NRIC/PASSPORT</strong>
+<strong>NRIC/Passport No.</strong>
 
     </div>
-<div class="col-md-9">
+<div class="col">
 <div #dataContainer3></div>
 </div>
   </div>
 
 
   <div class="row">
-    <div class="col-md-3">
+<div class="col">
       
 
 <strong>Start Date</strong>
 
     </div>
-<div class="col-md-9">
+<div class="col">
 <div #dataContainer7></div>
 </div>
   </div>
 
   <div class="row">
-    <div class="col-md-3">
+<div class="col">
       
 
 <strong>End Date</strong>
 
     </div>
-<div class="col-md-9">
+<div class="col">
 <div #dataContainer8></div>
 </div>
   </div>
 
 
   <div class="row">
-    <div class="col-md-3">
+<div class="col">
       
 
-<strong>Stampery ID</strong>
+<strong>Hash ID</strong>
 
     </div>
   
 
  
-<div class="col-md-9">
+<div class="col">
 <div #dataContainer4></div>
 </div>
   </div>
@@ -93,27 +97,28 @@
 
 
   <div class="row">
-    <div class="col-md-3">
+<div class="col">
       
 
 <strong>Timestamp</strong>
 
     </div>
-    <div class="col-md-9">
+<div class="col">
 <div #dataContainer5></div>
 </div>
   </div>
 
 
   <div class="row">
-    <div class="col-md-3">
+<div class="col">
       
 
-<strong>Stamp Validity</strong>
+<strong>Certificate Validity</strong>
 
     </div>
-    <div class="col-md-9">
+<div class="col">
 <div #dataContainer6></div>
+  <p>Certificate Validity must show TRUE in order for a certificate to be considered valid.</p>
 </div>
   </div>
 
