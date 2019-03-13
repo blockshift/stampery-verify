@@ -5,11 +5,11 @@
 <h4>All certficates issued to students who have completed a course from Blockchain Academy Malaysia are recorded
   onto the blockchain. To verify if a certificate is valid, simply insert the Hash ID and click Search.</h4> 
 
-  <form #searchStamp="ngForm" (ngSubmit)="onverify(searchStamp.value)">
+  <form #searchStamp="ngForm" (ngSubmit)="verifyrecord(searchStamp.value)">
     <div class="form-group">
 
-      <label>Enter Hash ID</label>
-      <input type="text" class="form-control" name="stamp" ngModel placeholder="Hash ID">
+      <label>Enter NRIC Number</label>
+      <input type="text" class="form-control" name="passportnumber" ngModel placeholder="Passport Number">
     </div>
 
 <button type="submit" class="btn btn-primary">Search</button>
@@ -62,7 +62,7 @@
 
     </div>
 <div class="col">
-<div #dataContainer7></div>
+<div #dataContainer4></div>
 </div>
   </div>
 
@@ -71,36 +71,6 @@
       
 
 <strong>End Date</strong>
-
-    </div>
-<div class="col">
-<div #dataContainer8></div>
-</div>
-  </div>
-
-
-  <div class="row">
-<div class="col">
-      
-
-<strong>Hash ID</strong>
-
-    </div>
-  
-
- 
-<div class="col">
-<div #dataContainer4></div>
-</div>
-  </div>
-
-
-
-  <div class="row">
-<div class="col">
-      
-
-<strong>Timestamp</strong>
 
     </div>
 <div class="col">
@@ -113,14 +83,27 @@
 <div class="col">
       
 
-<strong>Certificate Validity</strong>
+<strong>Transaction ID</strong>
 
     </div>
 <div class="col">
-<div #dataContainer6></div>
-  <p>Certificate Validity must show TRUE in order for a certificate to be considered valid.</p>
+<a href={{transactionlink}} target="_blank">{{transactionlink}}</a>
 </div>
   </div>
+
+
+  <div class="row">
+<div class="col">
+      
+
+<strong>Transaction Status</strong>
+
+    </div>
+<div class="col">
+<div #dataContainer7></div>
+</div>
+  </div>
+
 
 
   

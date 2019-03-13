@@ -39,13 +39,30 @@ export class AppService {
                 stamperyid: stampid
                 };
 
-return this.http.post('https://gravypts.com/getrecordbystamperyid', body, options )
+return this.http.post('https://blockchainfreelance-blockchainacademy.1d35.starter-us-east-1.openshiftapps.com/getrecordbystamperyid', body, options )
+    .map((res: Response) => res)
+    .catch((error:any) => Observable.throw(error.json().error || 'Server error shit bang in')); 
+
+
+
+  }
+
+
+
+verifyrecord(passportno){
+
+
+  const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }); 
+ const options = new RequestOptions({ headers: headers }); 
+  let body = new URLSearchParams();
+  body.set("passport",passportno);
+
+return this.http.post('http://ec2-35-168-114-210.compute-1.amazonaws.com:3001/fetchrecordbypassport', body.toString(),options )
     .map((res: Response) => res)
     .catch((error:any) => Observable.throw(error.json().error || 'Server error shit bang in')); 
 
 
   }
-
   
 
 }

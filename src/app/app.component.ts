@@ -19,71 +19,73 @@ export class AppComponent {
 @ViewChild('dataContainer6') dataContainer6: ElementRef;
 @ViewChild('dataContainer7') dataContainer7: ElementRef;
 @ViewChild('dataContainer8') dataContainer8: ElementRef;
+transactionlink:string;
+
 
 constructor(private exampleService: AppService,public dialog: MatDialog){}
 
 
 
-  onSubmit(value: any) {
- // 	var saveAs:any ;
-    console.log(value);
-    this.exampleService.verifystamp(value.stamp).subscribe(
-        (res) => {  
+//   onSubmit(value: any) {
+//  // 	var saveAs:any ;
+//     console.log(value);
+//     this.exampleService.verifystamp(value.stamp).subscribe(
+//         (res) => {  
 
            
-            saveAs(res,'certificate.pdf')
+//             saveAs(res,'certificate.pdf')
         
  
-        },
+//         },
 
-        (err)=>{
-        	var servererror = "Server Error";
-        	console.log(servererror);
-        }
+//         (err)=>{
+//         	var servererror = "Server Error";
+//         	console.log(servererror);
+//         }
 
-    );
-}
+//     );
+// }
 
 
-onverify(value:any){
+// onverify(value:any){
 
-this.exampleService.verifystampwithinfo(value.stamp).subscribe(data => {
+// this.exampleService.verifystampwithinfo(value.stamp).subscribe(data => {
 
-try{
+// try{
  
 
 
-	console.log("Data received",data);
-    var response = data["_body"];
-   if (response == "false") {
-   	const dialogConfig = new MatDialogConfig();
-   	dialogConfig.position = {
-    'top': '50',
-    left: '100'
-};
-   	let dialogRef = this.dialog.open(ErrordialogComponent, {
-      height: '150px',
-      width: '500px'
-    });
-   }
-    var parseresponse = JSON.parse(response);
-    var studentname = parseresponse.studentname;
-    var coursename = parseresponse.coursename;
-    var startdate = parseresponse.startdate;
-    var enddate = parseresponse.enddate;
-    var nric = parseresponse.nric;
-    var stamperyid = parseresponse.stamperyid;
-    var timestamp = parseresponse.timestamp;
-    var stampvalidity = parseresponse.validity;
+// 	console.log("Data received",data);
+//     var response = data["_body"];
+//    if (response == "false") {
+//    	const dialogConfig = new MatDialogConfig();
+//    	dialogConfig.position = {
+//     'top': '50',
+//     left: '100'
+// };
+//    	let dialogRef = this.dialog.open(ErrordialogComponent, {
+//       height: '150px',
+//       width: '500px'
+//     });
+//    }
+//     var parseresponse = JSON.parse(response);
+//     var studentname = parseresponse.studentname;
+//     var coursename = parseresponse.coursename;
+//     var startdate = parseresponse.startdate;
+//     var enddate = parseresponse.enddate;
+//     var nric = parseresponse.nric;
+//     var stamperyid = parseresponse.stamperyid;
+//     var timestamp = parseresponse.timestamp;
+//     var stampvalidity = parseresponse.validity;
     
-    this.dataContainer.nativeElement.innerHTML = studentname;
-    this.dataContainer2.nativeElement.innerHTML = coursename;
-    this.dataContainer3.nativeElement.innerHTML = nric;
-    this.dataContainer4.nativeElement.innerHTML = stamperyid;
-    this.dataContainer5.nativeElement.innerHTML = timestamp;
-    this.dataContainer6.nativeElement.innerHTML = stampvalidity;
-    this.dataContainer7.nativeElement.innerHTML = startdate;
-    this.dataContainer8.nativeElement.innerHTML = enddate;
+//     this.dataContainer.nativeElement.innerHTML = studentname;
+//     this.dataContainer2.nativeElement.innerHTML = coursename;
+//     this.dataContainer3.nativeElement.innerHTML = nric;
+//     this.dataContainer4.nativeElement.innerHTML = stamperyid;
+//     this.dataContainer5.nativeElement.innerHTML = timestamp;
+//     this.dataContainer6.nativeElement.innerHTML = stampvalidity;
+//     this.dataContainer7.nativeElement.innerHTML = startdate;
+//     this.dataContainer8.nativeElement.innerHTML = enddate;
 
   
 
@@ -93,32 +95,72 @@ try{
 
 
 
-}
-catch(e){
+// }
+// catch(e){
 	 
 	  
-}    
+// }    
 
 
 
 
-});
+// });
 
 
-this.exampleService.verifystamp(value.stamp).subscribe(
-        (res) => {  
-            saveAs(res,'certificate.pdf')
-},
+// this.exampleService.verifystamp(value.stamp).subscribe(
+//         (res) => {  
+//             saveAs(res,'certificate.pdf')
+// },
 
-        (err)=>{
-        	var servererror = "Server Error";
-        	console.log(servererror);
-        }
+//         (err)=>{
+//         	var servererror = "Server Error";
+//         	console.log(servererror);
+//         }
 
-    );
+//     );
+
+// }
+
+
+verifyrecord(value:any){
+var passportnumber = value.passportnumber;
+this.exampleService.verifyrecord(passportnumber).subscribe(data=>{
+
+
+try{
+
+     var response = data["_body"];
+     var parseresponse = JSON.parse(response);
+     console.log("Parse response",parseresponse.StudentName);
+     var studentname = parseresponse.StudentName;
+     var coursename = parseresponse.Course;
+     var startdate = parseresponse.startdate;
+     var enddate = parseresponse.enddate;
+    var nric = parseresponse.NRICNumber;
+    var transactionid = parseresponse.transactionid;
+    var transactionstatus = parseresponse.transactionstatus;
+    this.transactionlink='https://ropsten.etherscan.io/tx/'+transactionid;
+   this.dataContainer.nativeElement.innerHTML = studentname;
+    this.dataContainer2.nativeElement.innerHTML = coursename;
+     this.dataContainer3.nativeElement.innerHTML = nric;
+     this.dataContainer4.nativeElement.innerHTML = startdate;
+     this.dataContainer5.nativeElement.innerHTML = enddate;
+ //     this.dataContainer6.nativeElement.innerHTML = 'https://ropsten.etherscan.io/tx/'+transactionid;
+       this.dataContainer7.nativeElement.innerHTML = transactionstatus;
+}
+
+catch(e)
+{
+  console.log("Error Occured");
 
 }
 
+
+
+})
+
+
+}
 
 
 
