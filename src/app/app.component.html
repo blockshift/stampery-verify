@@ -2,13 +2,13 @@
 <img src="../assets/image/bca.png" alt="Logo" class="logo">
   <h2>Certificate Verification</h2>
 <br>
-<h4>All certficates issued to students who have completed a course from Blockchain Academy Malaysia are recorded
-  onto the blockchain. To verify if a certificate is valid, simply insert the Hash ID and click Search.</h4> 
+<h4>All certficates issued to students who have completed a course from Blockchain Academy are recorded
+  onto the blockchain. To verify if a certificate is valid, simply insert the NRIC/Passport Number and click Search.</h4> 
 
   <form #searchStamp="ngForm" (ngSubmit)="verifyrecord(searchStamp.value)">
     <div class="form-group">
 
-      <label>Enter NRIC Number</label>
+      <label>Enter NRIC/Passport Number</label>
       <input type="text" class="form-control" name="passportnumber" ngModel placeholder="Passport Number">
     </div>
 
@@ -83,7 +83,7 @@
 <div class="col">
       
 
-<strong>Transaction ID</strong>
+<strong>TX Hash Url</strong>
 
     </div>
 <div class="col">
@@ -96,7 +96,7 @@
 <div class="col">
       
 
-<strong>Transaction Status</strong>
+<strong>Certificate Status</strong>
 
     </div>
 <div class="col">
